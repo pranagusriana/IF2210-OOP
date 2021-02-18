@@ -97,22 +97,21 @@ void Polinom::print(){
     bool allnol = true;
     for(int i = 0; i<=this->derajat;i++){
         if(this->koef[i] != 0){
-            if (i == 0 && this->koef[i]<0){
-                cout << "-";
-            }
-            if (i != 0 && this->koef[i]<0){
-                cout << "-";
-            }
-            if (i != 0 && this->koef[i]>0){
-                cout << "+";
-            }
-            if (i != 0 && abs(this->koef[i])!=1){
+            if(i==0){
+                if(this->koef[i]<0){
+                    cout << "-";
+                }
                 cout << abs(this->koef[i]);
-            }
-            if (i == 0){
-                cout << abs(this->koef[i]);
-            }
-            if (i != 0){
+            } else{
+                if(this->koef[i]<0){
+                    cout << "-";
+                }
+                if(this->koef[i]>0){
+                    cout << "+";
+                }
+                if (abs(this->koef[i])!=1){
+                    cout << abs(this->koef[i]);
+                }
                 cout << "x^" << i;
             }
             allnol = false;
